@@ -77,6 +77,7 @@
   <img src="https://i.postimg.cc/448CSKJb/image0.jpg" 
        alt="Azure Horizon Charters" 
        style="width: 100%; height: auto; max-height: 500px; object-fit: cover;">
+  
 <div style="
         position: absolute; 
         top: 50%; left: 50%; 
@@ -87,7 +88,7 @@
   <h1 style="font-size: 3em; margin: 0;">Azure Horizon Charters</h1>
   <p style="font-size: 1.2em; margin-top: 10px;">
       Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico</p>
-  </div>
+</div style>
 </header>
   <nav>
     <a href="#servicios">Servicios</a>
