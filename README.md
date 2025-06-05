@@ -82,8 +82,8 @@
         top: 50%; left: 50%; 
         transform: translate(-50%, -50%);
         padding: -10px -10px;
-        background: rgba(0,0,0,0.35);
-        border-radius: 1px;">
+        background: transparent;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);">
   <h1 style="font-size: 3em; margin: 0;">Azure Horizon Charters</h1>
   <p style="font-size: 1.2em; margin-top: 10px;">
       Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico</p>
