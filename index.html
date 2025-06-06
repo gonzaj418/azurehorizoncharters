@@ -125,6 +125,48 @@
         font-size: 0.95em;
       }
     }
+    
+    #galeria {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  width: 500%;
+  animation: slide 20s infinite;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+  25%  { transform: translateX(-100%); }
+  45%  { transform: translateX(-100%); }
+  50%  { transform: translateX(-200%); }
+  70%  { transform: translateX(-200%); }
+  75%  { transform: translateX(-300%); }
+  95%  { transform: translateX(-300%); }
+  100% { transform: translateX(0%); }
+}
+
   </style>
   </head>
   
@@ -165,6 +207,19 @@
     <li><strong>Depósito requerido:</strong> $200</li>
     <li>*Máximo de 6 personas por embarcación</li>
   </ul>
+</section>
+  
+<section id="galeria">
+  <h2 style="text-align:center;">Galería</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="https://github.com/user-attachments/assets/bd07b083-03e1-4530-8c76-a2f5a20c32ca" alt="Foto 1">
+      <img src="https://github.com/user-attachments/assets/25d1cf10-c1cd-4096-9159-02ff4094bdc2" alt="Foto 2">
+      <img src="https://github.com/user-attachments/assets/2d5d3b68-1145-4ac2-99e3-9ccacb2ce6c5" alt="Foto 3">
+      <img src="https://github.com/user-attachments/assets/8a892bde-1e1f-4214-a9f4-1e93359e6d50" alt="Foto 4">
+      <img src="https://github.com/user-attachments/assets/118f617d-3cb0-4eaf-b9c0-8c80e6c7b268" alt="Foto 5">
+    </div>
+  </div>
 </section>
   
 <section class="cta">
