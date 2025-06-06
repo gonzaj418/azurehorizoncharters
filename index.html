@@ -125,43 +125,57 @@
         font-size: 0.95em;
       }
     }
+.carousel-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 .carousel-container {
   overflow: hidden;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  max-width: 900px;
-  touch-action: pan-y;
 }
 
 .carousel-track {
   display: flex;
-  gap: 10px;
-  animation: slideAuto 30s infinite linear;
+  transition: transform 0.5s ease;
   scroll-behavior: smooth;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-track img {
   width: 100%;
+  max-width: 100%;
   height: 250px;
   object-fit: cover;
-  flex: 0 0 auto;
+  flex: 0 0 100%;
   border-radius: 12px;
 }
 
-@keyframes slideAuto {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-400%); }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
 }
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 
 @media (max-width: 768px) {
   .carousel-track img {
     height: 180px;
   }
 }
+
   </style>
   </head>
   
@@ -183,6 +197,33 @@
       }
     }, 3000); // 3 segundos después de que el usuario suelte
   });
+</script>
+<script>
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const slides = document.querySelectorAll('.carousel-track img');
+  let index = 0;
+
+  function updateSlidePosition() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlidePosition();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlidePosition();
+  });
+
+  // Auto play
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateSlidePosition();
+  }, 5000); // cambia cada 5 segundos
 </script>
 
 <body>
@@ -225,15 +266,19 @@
 </section>
   
 <section id="galeria">
-  <h2 style="text-align:center;">Galería</h2>
-  <div class="carousel-container">
-    <div class="carousel-track">
+  <h2 style="text-align: center;">Galería</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev">❮</button>
+    <div class="carousel-container">
+      <div class="carousel-track">
       <img src="https://github.com/user-attachments/assets/bd07b083-03e1-4530-8c76-a2f5a20c32ca" alt="Foto 1">
       <img src="https://github.com/user-attachments/assets/25d1cf10-c1cd-4096-9159-02ff4094bdc2" alt="Foto 2">
       <img src="https://github.com/user-attachments/assets/2d5d3b68-1145-4ac2-99e3-9ccacb2ce6c5" alt="Foto 3">
       <img src="https://github.com/user-attachments/assets/8a892bde-1e1f-4214-a9f4-1e93359e6d50" alt="Foto 4">
       <img src="https://github.com/user-attachments/assets/118f617d-3cb0-4eaf-b9c0-8c80e6c7b268" alt="Foto 5">
+      </div>
     </div>
+    <button class="carousel-btn next">❯</button>
   </div>
 </section>
   
