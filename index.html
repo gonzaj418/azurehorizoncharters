@@ -144,12 +144,38 @@
         font-size: 0.95em;
       }
     }
-
+    
   </style>
   </head>
-  
-<body>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const slides = document.querySelectorAll('.carousel-track img');
+    let index = 0;
 
+    function updateSlidePosition() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateSlidePosition();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlidePosition();
+    });
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      updateSlidePosition();
+    }, 5000);
+  });
+</script>
+<body>
 <header>
   <img src="https://i.postimg.cc/448CSKJb/image0.jpg" 
        alt="Azure Horizon Charters" 
@@ -277,34 +303,6 @@
     const url = `https://wa.me/17874734037?text=${mensaje}`;
     window.open(url, '_blank');
   }
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector('.carousel-track');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const slides = document.querySelectorAll('.carousel-track img');
-    let index = 0;
-
-    function updateSlidePosition() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateSlidePosition();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlidePosition();
-    });
-
-    setInterval(() => {
-      index = (index + 1) % slides.length;
-      updateSlidePosition();
-    }, 5000);
-  });
 </script>
 
 </body>
