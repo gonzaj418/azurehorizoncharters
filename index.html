@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Azure Horizon Charters - Fajardo, PR</title>
-  
+
   <style>
     html, body {
       height: 100%;
@@ -169,21 +169,13 @@
     .carousel-btn.next {
       right: 10px;
     }
-
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://i.postimg.cc/448CSKJb/image0.jpg" 
-       alt="Azure Horizon Charters" 
-       style="width: 100%; max-height: 500px; object-fit: cover;">
-  <div style="
-    position: absolute; 
-    top: 50%; left: 50%; 
-    transform: translate(-50%, -50%);
-    background: transparent;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);">
+  <img src="https://i.postimg.cc/448CSKJb/image0.jpg" alt="Azure Horizon Charters" style="width: 100%; max-height: 500px; object-fit: cover;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: transparent; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);">
     <h1>Azure Horizon Charters</h1>
     <p>Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico</p>
   </div>
@@ -210,7 +202,7 @@
     <li>*Máximo de 6 personas por embarcación</li>
   </ul>
 </section>
-  
+
 <section id="galeria">
   <h2 style="text-align: center;">Galería</h2>
   <div class="carousel-wrapper">
@@ -235,11 +227,12 @@
     <button class="carousel-btn next">❯</button>
   </div>
 </section>
-  
+
 <section class="cta">
   <h2>¡Reserva tu aventura en el mar hoy!</h2>
   <p>Experiencias personalizadas, privacidad y atención de primera.</p>
   <a href="https://wa.me/17874734037?text=Hola%2C%20me%20gustaría%20reservar%20una%20charter%20con%20Azure%20Horizon" target="_blank">Reservar por WhatsApp</a>
+  <p style="margin-top: 20px;">📸 Síguenos en <a href="https://www.instagram.com/azure_horizon_charters" target="_blank" style="color: #fff; text-decoration: underline;">Instagram</a></p>
 </section>
 
 <section id="contacto">
@@ -249,7 +242,7 @@
   <p>📍 Fajardo, Puerto Rico</p>
 
   <h2>Reservar por WhatsApp</h2>
-  <form onsubmit="return enviarWhatsAppDirecto(event)" target="_blank">
+  <form onsubmit="enviarWhatsApp(event)">
     <label>Nombre:<br><input type="text" id="nombre" required></label><br>
     <label>Fecha deseada:<br><input type="date" id="fecha" required></label><br>
     <label>Duración:<br>
@@ -261,30 +254,16 @@
     </label><br>
     <label>Personas:<br><input type="number" id="personas" required></label><br>
     <label>Comentarios:<br><textarea id="comentarios" rows="4"></textarea></label><br>
-    <button type="submit" style="
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;">
+    <button type="submit" style="background: #25D366; color: white; border: none; padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer;">
       Reservar por WhatsApp
     </button>
   </form>
 </section>
 
 <footer>
-  <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
     <img src="https://i.postimg.cc/wMWy3n1r/Azure-Logo.jpg" alt="Logo Azure Horizon" style="height: 40px;">
     <span>© 2025 Azure Horizon Charters. Todos los derechos reservados.</span>
-  </div>
-  <div style="margin-top: 10px;">
-    <a href="https://www.instagram.com/azure_horizon_charters" target="_blank" style="text-decoration: none; color: white;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height: 30px; vertical-align: middle;">
-      <span style="margin-left: 8px;">Síguenos en Instagram</span>
-    </a>
   </div>
 </footer>
 
@@ -315,8 +294,8 @@
       updateSlidePosition();
     }, 5000);
   });
-  
-   function enviarWhatsAppDirecto(event) {
+
+  function enviarWhatsApp(event) {
     event.preventDefault();
     const nombre = document.getElementById('nombre').value;
     const fecha = document.getElementById('fecha').value;
@@ -333,10 +312,6 @@
 
     const url = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
-    return false;
-  }
-  if (navigator.userAgent.includes("Instagram") || navigator.userAgent.includes("FBAN")) {
-    alert("Si tienes problemas al reservar por WhatsApp, abre esta página en tu navegador (Safari o Chrome).");
   }
 </script>
 
