@@ -249,7 +249,7 @@
   <p>📍 Fajardo, Puerto Rico</p>
 
   <h2>Reservar por WhatsApp</h2>
-  <form onsubmit="enviarWhatsApp(event)">
+  <form onsubmit="return enviarWhatsAppDirecto(event)" target="_blank">
     <label>Nombre:<br><input type="text" id="nombre" required></label><br>
     <label>Fecha deseada:<br><input type="date" id="fecha" required></label><br>
     <label>Duración:<br>
@@ -276,13 +276,16 @@
 </section>
 
 <footer>
-  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
     <img src="https://i.postimg.cc/wMWy3n1r/Azure-Logo.jpg" alt="Logo Azure Horizon" style="height: 40px;">
     <span>© 2025 Azure Horizon Charters. Todos los derechos reservados.</span>
   </div>
-<a href="https://www.instagram.com/azure_horizon_charters" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height:30px;">
-</a>
+  <div style="margin-top: 10px;">
+    <a href="https://www.instagram.com/azure_horizon_charters" target="_blank" style="text-decoration: none; color: white;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height: 30px; vertical-align: middle;">
+      <span style="margin-left: 8px;">Síguenos en Instagram</span>
+    </a>
+  </div>
 </footer>
 
 <script>
@@ -312,8 +315,8 @@
       updateSlidePosition();
     }, 5000);
   });
-
-  function enviarWhatsApp(event) {
+<script>
+   function enviarWhatsAppDirecto(event) {
     event.preventDefault();
     const nombre = document.getElementById('nombre').value;
     const fecha = document.getElementById('fecha').value;
@@ -328,8 +331,12 @@
                     `*Personas:* ${personas}%0A` +
                     `*Comentarios:* ${comentarios}`;
 
-    const url = `https://wa.me/17874734037?text=${mensaje}`;
-    window.location.href = url;
+    const url = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+    return false;
+  }
+  if (navigator.userAgent.includes("Instagram") || navigator.userAgent.includes("FBAN")) {
+    alert("Si tienes problemas al reservar por WhatsApp, abre esta página en tu navegador (Safari o Chrome).");
   }
 </script>
 
