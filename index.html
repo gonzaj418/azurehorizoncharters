@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Azure Horizon Charters - Fajardo, PR</title>
-  
+
   <style>
     html, body {
       height: 100%;
@@ -169,21 +169,13 @@
     .carousel-btn.next {
       right: 10px;
     }
-
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://i.postimg.cc/448CSKJb/image0.jpg" 
-       alt="Azure Horizon Charters" 
-       style="width: 100%; max-height: 500px; object-fit: cover;">
-  <div style="
-    position: absolute; 
-    top: 50%; left: 50%; 
-    transform: translate(-50%, -50%);
-    background: transparent;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);">
+  <img src="https://i.postimg.cc/448CSKJb/image0.jpg" alt="Azure Horizon Charters" style="width: 100%; max-height: 500px; object-fit: cover;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: transparent; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);">
     <h1>Azure Horizon Charters</h1>
     <p>Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico</p>
   </div>
@@ -210,7 +202,7 @@
     <li>*Máximo de 6 personas por embarcación</li>
   </ul>
 </section>
-  
+
 <section id="galeria">
   <h2 style="text-align: center;">Galería</h2>
   <div class="carousel-wrapper">
@@ -235,11 +227,12 @@
     <button class="carousel-btn next">❯</button>
   </div>
 </section>
-  
+
 <section class="cta">
   <h2>¡Reserva tu aventura en el mar hoy!</h2>
   <p>Experiencias personalizadas, privacidad y atención de primera.</p>
   <a href="https://wa.me/17874734037?text=Hola%2C%20me%20gustaría%20reservar%20una%20charter%20con%20Azure%20Horizon" target="_blank">Reservar por WhatsApp</a>
+  <p style="margin-top: 20px;">📸 Síguenos en <a href="https://www.instagram.com/azure_horizon_charters" target="_blank" style="color: #fff; text-decoration: underline;">Instagram</a></p>
 </section>
 
 <section id="contacto">
@@ -261,15 +254,7 @@
     </label><br>
     <label>Personas:<br><input type="number" id="personas" required></label><br>
     <label>Comentarios:<br><textarea id="comentarios" rows="4"></textarea></label><br>
-    <button type="submit" style="
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;">
+    <button type="submit" style="background: #25D366; color: white; border: none; padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer;">
       Reservar por WhatsApp
     </button>
   </form>
@@ -291,7 +276,7 @@
     let index = 0;
 
     function updateSlidePosition() {
-      track.style.transform = translateX(-${index * 100}%);
+      track.style.transform = `translateX(-${index * 100}%)`;
     }
 
     nextBtn.addEventListener('click', () => {
@@ -318,14 +303,14 @@
     const personas = document.getElementById('personas').value;
     const comentarios = document.getElementById('comentarios').value;
 
-    const mensaje = Hola, me gustaría reservar con Azure Horizon Charters.%0A +
-                    *Nombre:* ${nombre}%0A +
-                    *Fecha:* ${fecha}%0A +
-                    *Duración:* ${duracion}%0A +
-                    *Personas:* ${personas}%0A +
-                    *Comentarios:* ${comentarios};
+    const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A` +
+                    `*Nombre:* ${nombre}%0A` +
+                    `*Fecha:* ${fecha}%0A` +
+                    `*Duración:* ${duracion}%0A` +
+                    `*Personas:* ${personas}%0A` +
+                    `*Comentarios:* ${comentarios}`;
 
-    const url = https://wa.me/17874734037?text=${mensaje};
+    const url = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
   }
 </script>
