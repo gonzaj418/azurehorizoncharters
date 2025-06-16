@@ -158,17 +158,23 @@
 </footer>
 
 <script>
-  function generarLinkWhatsapp() {
+ function enviarWhatsApp(event) {
+    event.preventDefault();
     const nombre = document.getElementById('nombre').value;
     const fecha = document.getElementById('fecha').value;
     const duracion = document.getElementById('duracion').value;
     const personas = document.getElementById('personas').value;
     const comentarios = document.getElementById('comentarios').value;
 
-    const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A*Nombre:* ${nombre}%0A*Fecha:* ${fecha}%0A*Duración:* ${duracion}%0A*Personas:* ${personas}%0A*Comentarios:* ${comentarios}`;
-    const url = `https://wa.me/17874734037?text=${encodeURI(mensaje)}`;
-    window.location.href = url;
-    return false;
+    const mensaje = Hola, me gustaría reservar con Azure Horizon Charters.%0A +
+                    *Nombre:* ${nombre}%0A +
+                    *Fecha:* ${fecha}%0A +
+                    *Duración:* ${duracion}%0A +
+                    *Personas:* ${personas}%0A +
+                    *Comentarios:* ${comentarios};
+
+    const url = https://wa.me/17874734037?text=${mensaje};
+    window.open(url, '_blank');
   }
 </script>
 
