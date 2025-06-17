@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>Add commentMore actions
+<head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3X96944LR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -13,82 +9,140 @@
     gtag('config', 'G-G3X96944LR');
   </script>
 
-  gtag('config', 'G-G3X96944LR');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Azure Horizon Charters - Fajardo, PR</title>
   
   <style>
-    <script>
-  const track = document.querySelector('.carousel-track');
-
-  let userScrolling = false;
-
-  track.addEventListener('touchstart', () => {
-    track.style.animation = 'none';
-    userScrolling = true;
-  });
-
-  track.addEventListener('touchend', () => {
-    userScrolling = false;
-    setTimeout(() => {
-      if (!userScrolling) {
-        track.style.animation = 'slideAuto 30s infinite linear';
-      }
-    }, 3000); // 3 segundos después de que el usuario suelte
-  });
-</script>
     html, body {
       height: 100%;
       margin: 0;
-@@ -144,38 +126,54 @@
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.postimg.cc/c4bSrv24/image1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #003049;
+    }
+
+    header {
+      background-color: rgba(0, 119, 182, 0.7);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    nav {
+      background-color: rgba(2, 62, 138, 0.7);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section, .cta {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      padding: 40px 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #0077b6;
+    }
+
+    .cta {
+      background-color: rgba(0, 150, 199, 0.85);
+      color: white;
+      text-align: center;
+    }
+
+    .cta a {
+      background: white;
+      color: #0077b6;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: rgba(2, 62, 138, 0.7);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 8px;
+        font-size: 0.95em;
+      }
+
+      section, .cta {
+        padding: 20px 15px;
+        margin: 15px 10px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .cta a {
+        padding: 10px 16px;
         font-size: 0.95em;
       }
     }
-    
-  </style>
-  </head>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector('.carousel-track');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const slides = document.querySelectorAll('.carousel-track img');
-    let index = 0;
 
-    function updateSlidePosition() {
-      track.style.transform = `translateX(-${index * 100}%)`;
     .carousel-wrapper {
       position: relative;
       overflow: hidden;
       max-width: 100%;
     }
 
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateSlidePosition();
-    });
     .carousel-container {
       width: 100%;
       overflow: hidden;
     }
 
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlidePosition();
-    });
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease-in-out;
     }
 
-    setInterval(() => {
-      index = (index + 1) % slides.length;
-      updateSlidePosition();
-    }, 5000);
-  });
-</script>
     .carousel-track img {
       width: 100%;
       flex-shrink: 0;
@@ -123,23 +177,46 @@
 <header>
   <img src="https://i.postimg.cc/448CSKJb/image0.jpg" 
        alt="Azure Horizon Charters" 
-@@ -219,19 +217,19 @@
+       style="width: 100%; max-height: 500px; object-fit: cover;">
+  <div style="
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+    background: transparent;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);">
+    <h1>Azure Horizon Charters</h1>
+    <p>Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#precios">Precios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="servicios">
+  <h2>Sobre Nosotros</h2>
+  <p>Descubre la belleza del Caribe con Azure Horizon Charters. Ofrecemos experiencias privadas en bote a destinos paradisíacos como Icacos, Palomino, Vieques y Culebra. Disfruta de aguas cristalinas, playas escondidas, buena música, bebidas frías y atardeceres inolvidables.</p>
+</section>
+
+<section id="precios">
+  <h2>Paquetes & Precios</h2>
+  <ul>
+    <li><strong>4 horas:</strong> $450 en semana / $550 fines de semana <br><em>No incluye comida ni cervezas locales</em></li>
+    <li><strong>6 horas:</strong> $550 en semana / $650 fines de semana <br><em>Incluye comida y cervezas locales</em></li>
+    <li><strong>Culebra o Vieques (7 hrs):</strong> $1,350</li>
+    <li><strong>Depósito requerido:</strong> $200</li>
+    <li>*Máximo de 6 personas por embarcación</li>
+  </ul>
+</section>
+  
+<section id="galeria">
+  <h2 style="text-align: center;">Galería</h2>
+  <div class="carousel-wrapper">
     <button class="carousel-btn prev">❮</button>
     <div class="carousel-container">
       <div class="carousel-track">
-      <img src="https://i.postimg.cc/PfKzf7RZ/image0.jpg" alt="Foto 1">
-      <img src="https://i.postimg.cc/vHB74vJK/image1.jpg" alt="Foto 2">
-      <img src="https://i.postimg.cc/tJg6VXM6/image10.jpg" alt="Foto 3">
-      <img src="https://i.postimg.cc/Kc9BhM1D/image11.jpg" alt="Foto 4">
-      <img src="https://i.postimg.cc/zvPgC9sc/image12.jpg" alt="Foto 5">
-      <img src="https://i.postimg.cc/WbhrN1rL/image13.jpg" alt="Foto 6">
-      <img src="https://i.postimg.cc/gjMvMwZ4/image2.jpg" alt="Foto 7">
-      <img src="https://i.postimg.cc/mg1Qwg2N/image3.jpg" alt="Foto 8">
-      <img src="https://i.postimg.cc/5NRBLC12/image5.jpg" alt="Foto 9">
-      <img src="https://i.postimg.cc/cJQwpk3v/image6.jpg" alt="Foto 10">
-      <img src="https://i.postimg.cc/50bLb55n/image7.jpg" alt="Foto 11">
-      <img src="https://i.postimg.cc/9f3yNHD3/image8.jpg" alt="Foto 12">
-      <img src="https://i.postimg.cc/XJLFJZQ3/image9.jpg" alt="Foto 13">
         <img src="https://i.postimg.cc/PfKzf7RZ/image0.jpg" alt="Foto 1">
         <img src="https://i.postimg.cc/vHB74vJK/image1.jpg" alt="Foto 2">
         <img src="https://i.postimg.cc/tJg6VXM6/image10.jpg" alt="Foto 3">
@@ -156,7 +233,56 @@
       </div>
     </div>
     <button class="carousel-btn next">❯</button>
-@@ -285,6 +283,33 @@
+  </div>
+</section>
+  
+<section class="cta">
+  <h2>¡Reserva tu aventura en el mar hoy!</h2>
+  <p>Experiencias personalizadas, privacidad y atención de primera.</p>
+  <a href="https://wa.me/17874734037?text=Hola%2C%20me%20gustaría%20reservar%20una%20charter%20con%20Azure%20Horizon" target="_blank">Reservar por WhatsApp</a>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>📞 <strong>Teléfono:</strong> <a href="tel:+17874734037">787-473-4037</a></p>
+  <p>📧 <strong>Email:</strong> <a href="mailto:j.gm13@hotmail.com">j.gm13@hotmail.com</a></p>
+  <p>📍 Fajardo, Puerto Rico</p>
+
+  <h2>Reservar por WhatsApp</h2>
+  <form onsubmit="enviarWhatsApp(event)">
+    <label>Nombre:<br><input type="text" id="nombre" required></label><br>
+    <label>Fecha deseada:<br><input type="date" id="fecha" required></label><br>
+    <label>Duración:<br>
+      <select id="duracion" required>
+        <option value="4 horas">4 horas</option>
+        <option value="6 horas">6 horas</option>
+        <option value="7 horas (Culebra o Vieques)">7 horas (Culebra o Vieques)</option>
+      </select>
+    </label><br>
+    <label>Personas:<br><input type="number" id="personas" required></label><br>
+    <label>Comentarios:<br><textarea id="comentarios" rows="4"></textarea></label><br>
+    <button type="submit" style="
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;">
+      Reservar por WhatsApp
+    </button>
+  </form>
+</section>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <img src="https://i.postimg.cc/wMWy3n1r/Azure-Logo.jpg" alt="Logo Azure Horizon" style="height: 40px;">
+    <span>© 2025 Azure Horizon Charters. Todos los derechos reservados.</span>
+  </div>
+<a href="https://www.instagram.com/azure_horizon_charters" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height:30px;">
+</a>
 </footer>
 
 <script>
@@ -190,7 +316,22 @@
   function enviarWhatsApp(event) {
     event.preventDefault();
     const nombre = document.getElementById('nombre').value;
-@@ -307,3 +332,4 @@
+    const fecha = document.getElementById('fecha').value;
+    const duracion = document.getElementById('duracion').value;
+    const personas = document.getElementById('personas').value;
+    const comentarios = document.getElementById('comentarios').value;
+
+    const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A` +
+                    `*Nombre:* ${nombre}%0A` +
+                    `*Fecha:* ${fecha}%0A` +
+                    `*Duración:* ${duracion}%0A` +
+                    `*Personas:* ${personas}%0A` +
+                    `*Comentarios:* ${comentarios}`;
+
+    const url = `https://wa.me/17874734037?text=${mensaje}`;
+    window.open(url, '_blank');
+  }
+</script>
 
 </body>
 </html>
