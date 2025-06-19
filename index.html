@@ -276,15 +276,16 @@
 </section>
 
 <footer>
-  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
     <img src="https://i.postimg.cc/wMWy3n1r/Azure-Logo.jpg" alt="Logo Azure Horizon" style="height: 40px;">
     <span>© 2025 Azure Horizon Charters. Todos los derechos reservados.</span>
   </div>
- <div style="margin-top: 10px;">
+  <div style="margin-top: 10px;">
     <a href="https://www.instagram.com/azure_horizon_charters" target="_blank" style="text-decoration: none; color: white;">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height: 30px; vertical-align: middle;">
-      <span style="margin-left: 8px;">Síguenos en Instagram</span>
-</a>
+      <span style="margin-left: 8px;">Síguenos en Instagram para ver más aventuras</span>
+    </a>
+  </div>
 </footer>
 
 <script>
@@ -315,24 +316,23 @@
     }, 5000);
   });
   
-js
-  function enviarWhatsAppDirecto(e) {
-  e.preventDefault();
-  const nombre = document.getElementById('nombre').value;
-  const fecha = document.getElementById('fecha').value;
-  const duracion = document.getElementById('duracion').value;
-  const personas = document.getElementById('personas').value;
-  const comentarios = document.getElementById('comentarios').value;
+function enviarWhatsAppDirecto(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const fecha = document.getElementById('fecha').value;
+    const duracion = document.getElementById('duracion').value;
+    const personas = document.getElementById('personas').value;
+    const comentarios = document.getElementById('comentarios').value;
 
-  const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A` +
-                  `*Nombre:* ${nombre}%0A` +
-                  `*Fecha:* ${fecha}%0A` +
-                  `*Duración:* ${duracion}%0A` +
-                  `*Personas:* ${personas}%0A` +
-                  `*Comentarios:* ${comentarios}`;
+    const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A` +
+                    `*Nombre:* ${nombre}%0A` +
+                    `*Fecha:* ${fecha}%0A` +
+                    `*Duración:* ${duracion}%0A` +
+                    `*Personas:* ${personas}%0A` +
+                    `*Comentarios:* ${comentarios}`;
 
-  const url = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
-  window.location.href = url;
+    const url = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
+    window.location.href = url;
   }
   
   if (navigator.userAgent.includes("Instagram") || navigator.userAgent.includes("FBAN")) {
