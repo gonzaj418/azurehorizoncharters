@@ -205,7 +205,7 @@
   <ul>
     <li><strong>4 horas:</strong> $450 en semana / $550 fines de semana <br><em>No incluye comida ni cervezas locales</em></li>
     <li><strong>6 horas:</strong> $550 en semana / $650 fines de semana <br><em>Incluye comida y cervezas locales</em></li>
-    <li><strong>Culebra o Vieques (7 hrs):</strong> $1,350</li>
+    <li><strong>Culebra o Vieques (7 hrs):</strong> $1,200</li>
     <li><strong>Depósito requerido:</strong> $200</li>
     <li>*Máximo de 6 personas por embarcación</li>
   </ul>
@@ -249,7 +249,7 @@
   <p>📍 Fajardo, Puerto Rico</p>
 
   <h2>Reservar por WhatsApp</h2>
-  <form onsubmit="enviarWhatsApp(event)">
+  <form action="https://wa.me/17874734037" method="get" target="_blank" onsubmit="return enviarWhatsAppDirecto(event)">
     <label>Nombre:<br><input type="text" id="nombre" required></label><br>
     <label>Fecha deseada:<br><input type="date" id="fecha" required></label><br>
     <label>Duración:<br>
@@ -313,8 +313,7 @@
     }, 5000);
   });
 
-  function enviarWhatsApp(event) {
-    event.preventDefault();
+  function enviarWhatsAppDirecto(e) {
     const nombre = document.getElementById('nombre').value;
     const fecha = document.getElementById('fecha').value;
     const duracion = document.getElementById('duracion').value;
@@ -328,8 +327,9 @@
                     `*Personas:* ${personas}%0A` +
                     `*Comentarios:* ${comentarios}`;
 
-    const url = `https://wa.me/17874734037?text=${mensaje}`;
-    window.location.href = url;
+     const finalUrl = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
+    window.open(finalUrl, '_blank');
+    return false;
   }
 </script>
 
