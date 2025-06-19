@@ -249,7 +249,7 @@
   <p>📍 Fajardo, Puerto Rico</p>
 
   <h2>Reservar por WhatsApp</h2>
-  <form onsubmit="return enviarWhatsAppDirecto(event)" target="_blank">
+  <form id="whatsapp-form">
     <label>Nombre:<br><input type="text" id="nombre" required></label><br>
     <label>Fecha deseada:<br><input type="date" id="fecha" required></label><br>
     <label>Duración:<br>
@@ -273,6 +273,14 @@
       Reservar por WhatsApp
     </button>
   </form>
+<div id="fallback-link" style="margin-top: 15px; display: none;">
+    <p>Si el botón no funciona, toca aquí para reservar:</p>
+    <a href="https://wa.me/17874734037?text=Hola%2C%20me%20gustaría%20reservar%20una%20charter%20con%20Azure%20Horizon" 
+       style="background:#25D366; color:white; padding:12px 24px; font-size:16px; font-weight:bold; border-radius:6px; text-decoration:none;"
+       target="_blank">
+      Ir a WhatsApp
+    </a>
+  </div>
 </section>
 
 <footer>
@@ -316,28 +324,28 @@
     }, 5000);
   });
   
-function enviarWhatsAppDirecto(e) {
+document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const nombre = document.getElementById('nombre').value;
-    const fecha = document.getElementById('fecha').value;
-    const duracion = document.getElementById('duracion').value;
-    const personas = document.getElementById('personas').value;
-    const comentarios = document.getElementById('comentarios').value;
+    try {
+      const nombre = document.getElementById('nombre').value.trim();
+      const fecha = document.getElementById('fecha').value;
+      const duracion = document.getElementById('duracion').value;
+      const personas = document.getElementById('personas').value;
+      const comentarios = document.getElementById('comentarios').value.trim();
 
-    const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A` +
-                    `*Nombre:* ${nombre}%0A` +
-                    `*Fecha:* ${fecha}%0A` +
-                    `*Duración:* ${duracion}%0A` +
-                    `*Personas:* ${personas}%0A` +
-                    `*Comentarios:* ${comentarios}`;
+      const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A` +
+                      `*Nombre:* ${nombre}%0A` +
+                      `*Fecha:* ${fecha}%0A` +
+                      `*Duración:* ${duracion}%0A` +
+                      `*Personas:* ${personas}%0A` +
+                      `*Comentarios:* ${comentarios}`;
 
-    const url = `https://wa.me/17874734037?text=${encodeURIComponent(mensaje)}`;
-    window.location.href = url;
-  }
-  
-  if (navigator.userAgent.includes("Instagram") || navigator.userAgent.includes("FBAN")) {
-    alert("Si tienes problemas al reservar por WhatsApp, abre esta página en tu navegador (Safari o Chrome).");
-  }
+      const url = `https://wa.me/17874734037?text=${mensaje}`;
+      window.location.href = url;
+    } catch (err) {
+ document.getElementById('fallback-link').style.display = 'block';
+    }
+  });
 </script>
 
 </body>
