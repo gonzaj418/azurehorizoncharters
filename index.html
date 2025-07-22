@@ -72,7 +72,6 @@
 
     h2 { color: #0077b6; text-align: center; margin-bottom: 2rem; }
 
-    /* Galería estilo carrusel */
     .carousel-container {
       position: relative;
       overflow: hidden;
@@ -108,7 +107,6 @@
     .carousel-button.prev { left: 10px; }
     .carousel-button.next { right: 10px; }
 
-    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -231,7 +229,6 @@
   </footer>
 
   <script>
-    // Carrusel
     const track = document.querySelector(".carousel-track");
     const prevBtn = document.querySelector(".carousel-button.prev");
     const nextBtn = document.querySelector(".carousel-button.next");
@@ -254,13 +251,11 @@
       updateCarousel();
     });
 
-    // Lightbox
     function openLightbox(src) {
       document.getElementById("lightbox-img").src = src;
       document.getElementById("lightbox").style.display = "flex";
     }
 
-    // Reserva + Mostrar opciones de pago
     document.getElementById("reservaForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
@@ -270,10 +265,8 @@
       const personas = document.getElementById("personas").value;
       const comentarios = document.getElementById("comentarios").value;
 
-      // Mostrar métodos de pago
       document.getElementById("pagoOpciones").style.display = "block";
 
-      // Abrir WhatsApp con mensaje
       const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters:%0A` +
                       `*Nombre:* ${nombre}%0A` +
                       `*Fecha:* ${fecha}%0A` +
