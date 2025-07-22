@@ -129,8 +129,10 @@
       to { opacity: 1; transform: scale(1); }
     }
   </style>
-<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  
 </head>
 <body>
   <header>
@@ -187,24 +189,12 @@
     <p>Real moments with real guests.</p>
   </div>
   <div class="gallery">
-    <a href="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" data-lightbox="charter-gallery">
-      <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg">
-    </a>
-    <a href="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" data-lightbox="charter-gallery">
-      <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg">
-    </a>
-    <a href="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" data-lightbox="charter-gallery">
-      <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg">
-    </a>
-    <a href="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" data-lightbox="charter-gallery">
-      <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg">
-    </a>
-    <a href="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" data-lightbox="charter-gallery">
-      <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
-    </a>
-    <a href="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" data-lightbox="charter-gallery">
-      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
-    </a>
+    <a href="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" class="glightbox" data-gallery="photos"><img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg"></a>
+    <a href="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" class="glightbox" data-gallery="photos"><img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg"></a>
+    <a href="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" class="glightbox" data-gallery="photos"><img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg"></a>
+    <a href="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" class="glightbox" data-gallery="photos"><img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg"></a>
+    <a href="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" class="glightbox" data-gallery="photos"><img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg"></a>
+    <a href="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" class="glightbox" data-gallery="photos"><img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg"></a>
   </div>
 </section>
 
@@ -342,5 +332,15 @@ function navigateLightbox(step) {
       lightbox.style.display = 'none';
     });
   </script>
+  
+  <script>
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true
+  });
+</script>
+
 </body>
 </html>
