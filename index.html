@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Azure Horizon Charters</title>
+  <title>Azure Horizon Charters | Fajardo, Puerto Rico</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,17 +27,15 @@
       background: rgba(0,0,0,0.5);
       z-index: 1;
     }
-    header h1, header p {
-      z-index: 2;
-    }
+    header h1, header p { z-index: 2; }
     header h1 { font-size: 2.8rem; margin-bottom: 1rem; }
     header p { font-size: 1.2rem; max-width: 600px; }
     nav {
       background: #0077b6;
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -46,25 +44,34 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
+      margin-left: 20px;
     }
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 4rem 2rem;
-    }
-    .intro-text {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .intro-text h2 {
+    .lang-toggle {
+      background: white;
       color: #0077b6;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
     }
-    .intro-text p {
-      font-size: 1.1rem;
-      color: #333;
+    section { max-width: 1100px; margin: auto; padding: 4rem 2rem; }
+    .intro-text { text-align: center; margin-bottom: 3rem; }
+    .intro-text h2 { color: #0077b6; font-size: 2rem; margin-bottom: 1rem; }
+    .intro-text p { font-size: 1.1rem; color: #333; }
+    .pricing, .features, .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 { color: #00a8e8; margin-bottom: 0.5rem; }
+    .card p { color: #333; }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -102,71 +109,108 @@
 <body>
   <header>
     <h1>Azure Horizon Charters</h1>
-    <p>Charters privados a Icacos, Palomino, Vieques y Culebra. Vive el paraíso desde Fajardo, PR.</p>
+    <p>Private boat charters to Icacos, Palomino, Vieques & Culebra from Fajardo, Puerto Rico.</p>
   </header>
   <nav>
-    <a href="#servicios">Tours</a>
-    <a href="#precios">Precios</a>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
+    <div>
+      <a href="#services">Tours</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="lang-toggle" onclick="window.location.href='index.html'">Español</button>
   </nav>
-  <section id="servicios">
+  <section id="services">
     <div class="intro-text">
-      <h2>¿Qué Ofrecemos?</h2>
-      <p>Experiencias en bote privadas con comodidad, flexibilidad y servicio personalizado. Perfecto para parejas, familias y grupos pequeños.</p>
+      <h2>What’s Included</h2>
+      <p>Paradise beaches, snorkeling gear, bluetooth speaker, ice chest, flexible stops, and personalized service. Just bring your towel and sunscreen!</p>
+    </div>
+    <div class="features">
+      <div class="card">
+        <h3>Snorkeling</h3>
+        <p>Explore crystal-clear waters and colorful marine life.</p>
+      </div>
+      <div class="card">
+        <h3>Cold Drinks</h3>
+        <p>Includes water, soda, and local beer (in select packages).</p>
+      </div>
+      <div class="card">
+        <h3>Private Guide</h3>
+        <p>Experienced captain with 100% personalized attention.</p>
+      </div>
     </div>
   </section>
-  <section id="precios">
+  <section id="pricing">
     <div class="intro-text">
-      <h2>Paquetes & Precios</h2>
+      <h2>Packages & Rates</h2>
     </div>
-    <div class="gallery">
-      <img src="https://i.postimg.cc/T3HF1WLH/Full-Size-Render.jpg" alt="Paquete 4hrs">
-      <img src="https://i.postimg.cc/mgXf95qj/Full-Size-Render.jpg" alt="Paquete 6hrs">
-      <img src="https://i.postimg.cc/D0dRwjLq/Full-Size-Render.jpg" alt="Paquete 7hrs">
+    <div class="pricing">
+      <div class="card">
+        <h3>4 Hours</h3>
+        <p>$550 – Local tour to Icacos or Palomino. No food or drinks.</p>
+      </div>
+      <div class="card">
+        <h3>6 Hours</h3>
+        <p>$650 – Includes snacks and local beer. Extra time to snorkel and relax.</p>
+      </div>
+      <div class="card">
+        <h3>7 Hours</h3>
+        <p>$1350 – Full experience to Culebra or Vieques. All included.</p>
+      </div>
     </div>
   </section>
-  <section id="galeria">
+  <section id="gallery">
     <div class="intro-text">
-      <h2>Galería</h2>
+      <h2>Gallery</h2>
+      <p>Real moments with real guests.</p>
     </div>
     <div class="gallery">
       <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg">
       <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/sf7rLKQf/Full-Size-Render.jpg">
       <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/bNpKBPfL/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/25yYXDvg/IMG-0540.jpg">
       <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg">
-      <img src="https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg">
       <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
-      <img src="https://i.postimg.cc/Jz1MZJhr/IMG-1837.jpg">
-      <img src="https://i.postimg.cc/GtGdJxY2/IMG-2104.jpg">
-      <img src="https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg">
-      <img src="https://i.postimg.cc/1tNQsrvH/Penultimate-Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/YSR4QM7V/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/TYTrSd2k/172f4fc8-4092-4dd4-a6c0-0bc766bf87e2.jpg">
-      <img src="https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg">
       <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
     </div>
   </section>
-  <section class="cta">
-    <h2>¿Listo para zarpar?</h2>
-    <p>Reserva ahora tu aventura exclusiva en el mar.</p>
-    <a href="https://wa.me/17874734037?text=Hola,%20quiero%20reservar%20una%20charter%20con%20Azure%20Horizon">Reservar por WhatsApp</a>
-  </section>
-  <section id="contacto">
+  <section id="testimonials">
     <div class="intro-text">
-      <h2>Contáctanos</h2>
-      <p>📞 <strong>Tel:</strong> <a href="tel:+17874734037">787-473-4037</a><br>
+      <h2>Testimonials</h2>
+      <p>What our guests are saying:</p>
+    </div>
+    <div class="testimonials">
+      <div class="card">
+        <p>"Amazing experience. We saw turtles and hidden beaches. 100% recommended."</p>
+        <strong>– Laura G.</strong>
+      </div>
+      <div class="card">
+        <p>"The captain was super kind, the boat was spotless, and the sunset... wow."</p>
+        <strong>– Andrew M.</strong>
+      </div>
+      <div class="card">
+        <p>"The highlight of our Puerto Rico trip. Would book again in a heartbeat."</p>
+        <strong>– Mark & Julia</strong>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <h2>Ready to set sail?</h2>
+    <p>Book your unforgettable Caribbean adventure now.</p>
+    <a href="https://wa.me/17874734037?text=Hi%2C%20I%27d%20like%20to%20book%20a%20charter%20with%20Azure%20Horizon">Book via WhatsApp</a>
+  </section>
+  <section id="contact">
+    <div class="intro-text">
+      <h2>Contact Us</h2>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+17874734037">787-473-4037</a><br>
          📧 <strong>Email:</strong> <a href="mailto:j.gm13@hotmail.com">j.gm13@hotmail.com</a><br>
-         📍 Fajardo, Puerto Rico<br>
-         📸 <a href="https://www.instagram.com/azure_horizon_charters" target="_blank">@azure_horizon_charters</a></p>
+         📍 Departure from Fajardo, Puerto Rico<br>
+         📸 <a href="https://www.instagram.com/azure_horizon_charters" target="_blank">Follow us on Instagram</a></p>
     </div>
   </section>
   <footer>
-    <img src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg" alt="Logo Azure Horizon">
-    <p>&copy; 2025 Azure Horizon Charters. Todos los derechos reservados.</p>
+    <img src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg" alt="Azure Horizon Logo">
+    <p>&copy; 2025 Azure Horizon Charters. All rights reserved.</p>
   </footer>
 </body>
 </html>
