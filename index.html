@@ -180,20 +180,114 @@
   </section>
 
  <section id="gallery">
-    <div class="intro-text">
-      <h2>Gallery</h2>
-      <p>Real moments with real guests.</p>
-    </div>
-    <div class="gallery">
-      <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg">
-      <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
-      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
-    </div>
-  </section>
-  
+  <div class="intro-text">
+    <h2>Gallery</h2>
+    <p>Real moments with real guests.</p>
+  </div>
+
+  <div class="gallery-slider" id="row1">
+    <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" onclick="openLightbox(0)">
+    <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" onclick="openLightbox(1)">
+    <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" onclick="openLightbox(2)">
+    <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" onclick="openLightbox(3)">
+    <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" onclick="openLightbox(4)">
+    <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" onclick="openLightbox(5)">
+    <img src="https://i.postimg.cc/25yYXDvg/IMG-0540.jpg" onclick="openLightbox(6)">
+    <img src="https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg" onclick="openLightbox(7)">
+    <img src="https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg" onclick="openLightbox(8)">
+    <img src="https://i.postimg.cc/Jz1MZJhr/IMG-1837.jpg" onclick="openLightbox(9)">
+    <img src="https://i.postimg.cc/GtGdJxY2/IMG-2104.jpg" onclick="openLightbox(10)">
+    <img src="https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg" onclick="openLightbox(11)">
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="nav prev" onclick="event.stopPropagation(); navigateLightbox(-1)">&#10094;</button>
+    <img id="lightbox-img">
+    <button class="nav next" onclick="event.stopPropagation(); navigateLightbox(1)">&#10095;</button>
+  </div>
+</section>
+
+<style>
+.gallery-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding: 1rem;
+}
+.gallery-slider img {
+  scroll-snap-align: start;
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.gallery-slider img:hover {
+  transform: scale(1.03);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+.lightbox .nav {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.lightbox .prev { left: 30px; }
+.lightbox .next { right: 30px; }
+</style>
+
+<script>
+const allImages = [
+  "https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg",
+  "https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg",
+  "https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg",
+  "https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg",
+  "https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg",
+  "https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg",
+  "https://i.postimg.cc/25yYXDvg/IMG-0540.jpg",
+  "https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg",
+  "https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg",
+  "https://i.postimg.cc/Jz1MZJhr/IMG-1837.jpg",
+  "https://i.postimg.cc/GtGdJxY2/IMG-2104.jpg",
+  "https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg"
+];
+let currentIndex = 0;
+function openLightbox(index) {
+  currentIndex = index;
+  document.getElementById('lightbox-img').src = allImages[currentIndex];
+  document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+function navigateLightbox(step) {
+  currentIndex = (currentIndex + step + allImages.length) % allImages.length;
+  document.getElementById('lightbox-img').src = allImages[currentIndex];
+}
+</script>
+
   <section id="testimonials">
     <div class="intro-text">
       <h2>Testimonials</h2>
