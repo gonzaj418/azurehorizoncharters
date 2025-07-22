@@ -157,20 +157,45 @@
     </div>
   </section>
 
-  <section id="gallery">
-    <div class="intro-text">
-      <h2>Gallery</h2>
-      <p>Real moments with real guests.</p>
-    </div>
-    <div class="gallery">
-      <a href="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery"><img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg"></a>
-      <a href="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery"><img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg"></a>
-      <a href="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery"><img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg"></a>
-      <a href="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" class="glightbox" data-gallery="gallery"><img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg"></a>
-      <a href="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" class="glightbox" data-gallery="gallery"><img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg"></a>
-      <a href="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery"><img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg"></a>
-    </div>
-  </section>
+<link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<section id="gallery">
+  <div class="intro-text">
+    <h2>Gallery</h2>
+    <p>Real moments with real guests.</p>
+  </div>
+  <div class="gallery">
+    <a href="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery1">
+      <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg">
+    </a>
+    <a href="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery1">
+      <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg">
+    </a>
+    <a href="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery1">
+      <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg">
+    </a>
+    <a href="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" class="glightbox" data-gallery="gallery1">
+      <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg">
+    </a>
+    <a href="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" class="glightbox" data-gallery="gallery1">
+      <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
+    </a>
+    <a href="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" class="glightbox" data-gallery="gallery1">
+      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
+    </a>
+  </div>
+</section>
+
+<script>
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true
+  });
+</script>
+
 
   <section id="testimonials">
     <div class="intro-text">
