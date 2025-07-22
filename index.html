@@ -193,50 +193,7 @@
       <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
     </div>
   </section>
-
-<script>
-  const track = document.querySelector('.gallery-track');
-  const leftBtn = document.querySelector('.carousel-btn.left');
-  const rightBtn = document.querySelector('.carousel-btn.right');
-  let index = 0;
-  const visible = 6;
-  const images = document.querySelectorAll('.gallery-track img');
-
-  function updateCarousel() {
-    const slideWidth = images[0].clientWidth + 10; // include gap
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
-
-  rightBtn.addEventListener('click', () => {
-    if (index < images.length - visible) index++;
-    updateCarousel();
-  });
-
-  leftBtn.addEventListener('click', () => {
-    if (index > 0) index--;
-    updateCarousel();
-  });
-
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.querySelector('.lightbox .close');
-
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'block';
-      lightboxImg.src = img.src;
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === lightbox) lightbox.style.display = 'none';
-  });
-</script>
-
+  
   <section id="testimonials">
     <div class="intro-text">
       <h2>Testimonials</h2>
