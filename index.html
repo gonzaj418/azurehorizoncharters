@@ -4,11 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Azure Horizon Charters</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Montserrat', sans-serif; background-color: #f2faff; color: #003049; }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f3faff;
+      color: #003049;
+    }
     header {
       background: url('https://i.postimg.cc/zGWpS8wz/IMG-0721.jpg') center/cover no-repeat;
       height: 90vh;
@@ -16,27 +19,28 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
       text-align: center;
       color: white;
+      position: relative;
     }
-
     header::after {
       content: '';
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
       z-index: 1;
     }
-
-    header h1, header p {
-      z-index: 2;
-      position: relative;
+    header h1, header p { z-index: 2; position: relative; }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
-
-    header h1 { font-size: 3rem; margin-bottom: 1rem; }
-    header p { font-size: 1.2rem; max-width: 600px; }
-
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
     nav {
       background: #0077b6;
       display: flex;
@@ -47,234 +51,208 @@
       top: 0;
       z-index: 100;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      margin-right: 20px;
+      font-weight: 600;
+      margin-left: 20px;
     }
-
     .lang-toggle {
       background: white;
       color: #0077b6;
       padding: 6px 12px;
-      border-radius: 5px;
+      border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
     }
-
     section {
       max-width: 1100px;
       margin: auto;
       padding: 4rem 2rem;
     }
-
-    h2 { color: #0077b6; text-align: center; margin-bottom: 2rem; }
-
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
+    .intro-text {
+      text-align: center;
+      margin-bottom: 3rem;
     }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-track img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
+    .intro-text h2 {
+      color: #0077b6;
       font-size: 2rem;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 2;
+      margin-bottom: 1rem;
     }
-
-    .carousel-button.prev { left: 10px; }
-    .carousel-button.next { right: 10px; }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-
-    .lightbox:target {
-      display: flex;
+    .intro-text p {
+      font-size: 1.1rem;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Azure Horizon Charters</h1>
-    <p>Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico.</p>
+    <p>Explora Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico</p>
   </header>
-
   <nav>
     <div>
+      <a href="#servicios">Tours</a>
+      <a href="#precios">Precios</a>
       <a href="#galeria">Galería</a>
-      <a href="#reservar">Reservar</a>
+      <a href="#reserva">Reservas</a>
       <a href="#contacto">Contacto</a>
     </div>
     <button class="lang-toggle" onclick="window.location.href='en.html'">English</button>
   </nav>
+  <section id="servicios">
+    <div class="intro-text">
+      <h2>Qué Incluye</h2>
+      <p>Playas paradisíacas, equipo de snorkel, música, neverita, paradas flexibles y atención personalizada. Solo trae toalla y protector solar.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+      <div class="card"><h3>Snorkeling</h3><p>Explora aguas cristalinas y vida marina colorida.</p></div>
+      <div class="card"><h3>Bebidas Frías</h3><p>Incluye agua, refrescos y cervezas locales (en paquetes selectos).</p></div>
+      <div class="card"><h3>Guía Privado</h3><p>Capitán experimentado y atención 100% personalizada.</p></div>
+    </div>
+  </section>
+
+  <section id="precios">
+    <div class="intro-text">
+      <h2>Paquetes y Tarifas</h2>
+    </div>
+    <div class="pricing" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+      <div class="card"><h3>4 Horas</h3><p>$550 – Tour local a Icacos o Palomino. No incluye comida o bebida.</p></div>
+      <div class="card"><h3>6 Horas</h3><p>$650 – Incluye snacks y cerveza local. Más tiempo para snorkel y relax.</p></div>
+      <div class="card"><h3>7 Horas</h3><p>$1350 – Viaje completo a Culebra o Vieques. Todo incluido.</p></div>
+    </div>
+  </section>
 
   <section id="galeria">
-    <h2>Galería</h2>
-    <div class="carousel-container">
-      <button class="carousel-button prev">&#10094;</button>
-      <div class="carousel-track">
-        
-        <img src="https://i.postimg.cc/zGWpS8wz/IMG-0721.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/7Y4kr703/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/T3HF1WLH/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/D0dRwjLq/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/mgXf95qj/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/5NgZcrxJ/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/sf7rLKQf/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/bNpKBPfL/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/25yYXDvg/IMG-0540.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/Jz1MZJhr/IMG-1837.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/GtGdJxY2/IMG-2104.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/1tNQsrvH/Penultimate-Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/YSR4QM7V/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/TYTrSd2k/172f4fc8-4092-4dd4-a6c0-0bc766bf87e2.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg" onclick="openLightbox(this.src)">
-        <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" onclick="openLightbox(this.src)">
+    <div class="intro-text">
+      <h2>Galería</h2>
+      <p>Momentos reales con nuestros invitados</p>
+    </div>
+    <div class="gallery-carousel" style="overflow: hidden; position: relative;">
+      <div id="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+        <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/D0dRwjLq/Full-Size-Render.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg" class="carousel-img" onclick="zoom(this)">
+        <img src="https://i.postimg.cc/YSR4QM7V/Full-Size-Render.jpg" class="carousel-img" onclick="zoom(this)">
       </div>
-      <button class="carousel-button next">&#10095;</button>
+      <button onclick="prevSlide()" style="position:absolute; left:10px; top:45%; z-index:10;">⬅️</button>
+      <button onclick="nextSlide()" style="position:absolute; right:10px; top:45%; z-index:10;">➡️</button>
     </div>
-    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-      <img id="lightbox-img" src="">
+    <style>
+      .carousel-img {
+        width: calc(100% / 6);
+        cursor: pointer;
+        object-fit: cover;
+        max-height: 200px;
+      }
+      @media (max-width: 768px) {
+        .carousel-img { width: calc(100% / 2); }
+      }
+    </style>
+    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+      <img id="lightbox-img" src="" style="max-width:90%; max-height:90%;">
     </div>
   </section>
-  <section id="reservar">
-    <h2>Reservar</h2>
-    <form id="reservaForm" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;">
-      <label>Nombre completo:
-        <input type="text" id="nombre" required style="padding:10px; width:100%;">
-      </label>
-      <label>Fecha deseada:
-        <input type="date" id="fecha" required style="padding:10px; width:100%;">
-      </label>
-      <label>Paquete:
-        <select id="paquete" required style="padding:10px;">
-          <option value="4 horas - $550">4 horas - $550</option>
-          <option value="6 horas - $650">6 horas - $650</option>
-          <option value="7 horas (Culebra o Vieques) - $1350">7 horas (Culebra o Vieques) - $1350</option>
-        </select>
-      </label>
-      <label>Número de personas:
-        <input type="number" id="personas" required min="1" max="6" style="padding:10px;">
-      </label>
-      <label>Comentarios:
-        <textarea id="comentarios" rows="4" style="padding:10px;"></textarea>
-      </label>
-      <button type="submit" style="background:#0077b6; color:white; padding:12px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
-        Reservar ahora
-      </button>
-    </form>
+<section id="reserva">
+  <div class="intro-text">
+    <h2>Reserva Tu Aventura</h2>
+    <p>Completa el formulario y te confirmaremos por WhatsApp.</p>
+  </div>
+  <form id="reserva-form" style="max-width:600px; margin:auto;">
+    <label>Nombre:<br><input type="text" id="nombre" required style="width:100%; padding:10px;"></label><br><br>
+    <label>Fecha deseada:<br><input type="date" id="fecha" required style="width:100%; padding:10px;"></label><br><br>
+    <label>Duración:<br>
+      <select id="duracion" required style="width:100%; padding:10px;">
+        <option value="4 horas ($550)">4 horas ($550)</option>
+        <option value="6 horas ($650)">6 horas ($650)</option>
+        <option value="7 horas - Culebra o Vieques ($1350)">7 horas - Culebra o Vieques ($1350)</option>
+      </select>
+    </label><br><br>
+    <label># de personas:<br><input type="number" id="personas" required min="1" max="6" style="width:100%; padding:10px;"></label><br><br>
+    <label>Comentarios:<br><textarea id="comentarios" rows="4" style="width:100%; padding:10px;"></textarea></label><br><br>
+    <button type="submit" style="background:#25D366; color:white; font-weight:bold; padding:12px 24px; border:none; border-radius:6px; cursor:pointer;">Reservar por WhatsApp</button>
+  </form>
 
-    <div id="pagoOpciones" style="display:none; margin-top:30px; text-align:center;">
-      <h3>Formas de pago:</h3>
-      <p><strong>ATH Móvil:</strong> 787-473-4037</p>
-      <p><strong>Venmo:</strong> @azurehorizoncharters</p>
-      <p><strong>PayPal:</strong> j.gm13@hotmail.com</p>
-      <p>También puedes confirmar tu reserva por <a href="https://wa.me/17874734037" target="_blank" style="color:#0077b6; font-weight:bold;">WhatsApp</a>.</p>
-    </div>
-  </section>
-  <section id="contacto">
+  <div id="pagos" style="display:none; margin-top:3rem; text-align:center;">
+    <h3>Realiza tu pago para confirmar:</h3>
+    <p><strong>ATH Móvil:</strong> 787-473-4037</p>
+    <p><strong>Venmo:</strong> @azurehorizoncharters</p>
+    <p><strong>PayPal:</strong> j.gm13@hotmail.com</p>
+    <p><em>*Solo después de confirmar por WhatsApp*</em></p>
+  </div>
+</section>
+
+<script>
+  document.getElementById('reserva-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const fecha = document.getElementById('fecha').value;
+    const duracion = document.getElementById('duracion').value;
+    const personas = document.getElementById('personas').value;
+    const comentarios = document.getElementById('comentarios').value.trim();
+
+    const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters.%0A*Nombre:* ${nombre}%0A*Fecha:* ${fecha}%0A*Duración:* ${duracion}%0A*Personas:* ${personas}%0A*Comentarios:* ${comentarios}`;
+    const url = `https://wa.me/17874734037?text=${mensaje}`;
+
+    window.open(url, '_blank');
+    document.getElementById('pagos').style.display = 'block';
+  });
+</script>
+<section id="contacto" style="text-align:center; margin-top:4rem;">
+  <div class="intro-text">
     <h2>Contacto</h2>
-    <p style="text-align:center;">
+    <p>
       📞 <strong>Teléfono:</strong> <a href="tel:+17874734037">787-473-4037</a><br>
       📧 <strong>Email:</strong> <a href="mailto:j.gm13@hotmail.com">j.gm13@hotmail.com</a><br>
-      📍 Fajardo, Puerto Rico<br><br>
-      <a href="https://www.instagram.com/azure_horizon_charters" target="_blank">Síguenos en Instagram</a>
+      📍 Salidas desde Fajardo, Puerto Rico<br><br>
+      <a href="https://www.instagram.com/azure_horizon_charters" target="_blank" style="text-decoration:none; color:#0077b6; font-weight:bold;">
+        📸 Síguenos en Instagram
+      </a>
     </p>
-  </section>
-  <footer>
-    <img src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg" alt="Logo Azure Horizon" style="height: 50px; margin-bottom: 10px;">
-    <p>&copy; 2025 Azure Horizon Charters. Todos los derechos reservados.</p>
-  </footer>
-  <script>
-    const track = document.querySelector(".carousel-track");
-    const prevBtn = document.querySelector(".carousel-button.prev");
-    const nextBtn = document.querySelector(".carousel-button.next");
+  </div>
+</section>
 
-    let index = 0;
-    const slides = track.children;
+<footer style="background:#003049; color:white; text-align:center; padding:2rem; margin-top:2rem;">
+  <img src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg" alt="Logo Azure Horizon" style="height: 40px; margin-bottom:10px;">
+  <p>&copy; 2025 Azure Horizon Charters. Todos los derechos reservados.</p>
+</footer>
 
-    function updateCarousel() {
-      const width = slides[0].clientWidth + 10;
-      track.style.transform = `translateX(-${index * width}px)`;
-    }
+<script>
+  let currentIndex = 0;
+  const track = document.getElementById('carousel-track');
+  const imgs = track.querySelectorAll('img');
+  const groupSize = 6;
+  const totalGroups = Math.ceil(imgs.length / groupSize);
 
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
+  function updateCarousel() {
+    const offset = currentIndex * groupSize * (100 / 6);
+    track.style.transform = `translateX(-${offset}%)`;
+  }
 
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalGroups;
+    updateCarousel();
+  }
 
-    function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
-      document.getElementById("lightbox").style.display = "flex";
-    }
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalGroups) % totalGroups;
+    updateCarousel();
+  }
 
-    document.getElementById("reservaForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+  function zoom(img) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  }
 
-      const nombre = document.getElementById("nombre").value;
-      const fecha = document.getElementById("fecha").value;
-      const paquete = document.getElementById("paquete").value;
-      const personas = document.getElementById("personas").value;
-      const comentarios = document.getElementById("comentarios").value;
-
-      document.getElementById("pagoOpciones").style.display = "block";
-
-      const mensaje = `Hola, me gustaría reservar con Azure Horizon Charters:%0A` +
-                      `*Nombre:* ${nombre}%0A` +
-                      `*Fecha:* ${fecha}%0A` +
-                      `*Paquete:* ${paquete}%0A` +
-                      `*Personas:* ${personas}%0A` +
-                      `*Comentarios:* ${comentarios}`;
-      const url = `https://wa.me/17874734037?text=${mensaje}`;
-      window.open(url, "_blank");
-    });
-  </script>
-</body>
-</html>
+  document.getElementById('lightbox').addEventListener('click', function () {
+    this.style.display = 'none';
+  });
+</script>
