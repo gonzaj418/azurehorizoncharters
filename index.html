@@ -104,8 +104,46 @@
       padding: 2rem;
     }
     footer img { height: 40px; margin-bottom: 0.5rem; }
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
   </style>
 </head>
+  <script>
+  const galleryImgs = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  galleryImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
 <body>
   <header>
     <h1>Azure Horizon Charters</h1>
@@ -177,6 +215,9 @@
       <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
       <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
     </div>
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" src="">
+</div>
   </section>
   <section id="testimonials">
     <div class="intro-text">
