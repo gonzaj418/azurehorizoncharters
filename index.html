@@ -129,6 +129,8 @@
       to { opacity: 1; transform: scale(1); }
     }
   </style>
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
 </head>
 <body>
   <header>
@@ -179,31 +181,30 @@
     </div>
   </section>
 
- <section id="gallery">
+<section id="gallery">
   <div class="intro-text">
     <h2>Gallery</h2>
     <p>Real moments with real guests.</p>
   </div>
-
-  <div class="gallery-slider" id="row1">
-    <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" onclick="openLightbox(0)">
-    <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" onclick="openLightbox(1)">
-    <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" onclick="openLightbox(2)">
-    <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" onclick="openLightbox(3)">
-    <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" onclick="openLightbox(4)">
-    <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" onclick="openLightbox(5)">
-    <img src="https://i.postimg.cc/25yYXDvg/IMG-0540.jpg" onclick="openLightbox(6)">
-    <img src="https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg" onclick="openLightbox(7)">
-    <img src="https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg" onclick="openLightbox(8)">
-    <img src="https://i.postimg.cc/Jz1MZJhr/IMG-1837.jpg" onclick="openLightbox(9)">
-    <img src="https://i.postimg.cc/GtGdJxY2/IMG-2104.jpg" onclick="openLightbox(10)">
-    <img src="https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg" onclick="openLightbox(11)">
-  </div>
-
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <button class="nav prev" onclick="event.stopPropagation(); navigateLightbox(-1)">&#10094;</button>
-    <img id="lightbox-img">
-    <button class="nav next" onclick="event.stopPropagation(); navigateLightbox(1)">&#10095;</button>
+  <div class="gallery">
+    <a href="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" data-lightbox="charter-gallery">
+      <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg">
+    </a>
+    <a href="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" data-lightbox="charter-gallery">
+      <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg">
+    </a>
+    <a href="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" data-lightbox="charter-gallery">
+      <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg">
+    </a>
+    <a href="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" data-lightbox="charter-gallery">
+      <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg">
+    </a>
+    <a href="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" data-lightbox="charter-gallery">
+      <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
+    </a>
+    <a href="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" data-lightbox="charter-gallery">
+      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
+    </a>
   </div>
 </section>
 
