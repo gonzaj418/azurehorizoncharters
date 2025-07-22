@@ -180,19 +180,137 @@
   </section>
 
   <section id="gallery">
-    <div class="intro-text">
-      <h2>Gallery</h2>
-      <p>Real moments with real guests.</p>
+  <div class="intro-text">
+    <h2>Gallery</h2>
+    <p>Real moments with real guests.</p>
+  </div>
+  <div class="carousel-gallery">
+    <div class="gallery-track">
+      <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg" alt="1">
+      <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg" alt="2">
+      <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg" alt="3">
+      <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg" alt="4">
+      <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg" alt="5">
+      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" alt="6">
+      <img src="https://i.postimg.cc/7Y4kr703/Full-Size-Render.jpg" alt="7">
+      <img src="https://i.postimg.cc/D0dRwjLq/Full-Size-Render.jpg" alt="8">
+      <img src="https://i.postimg.cc/sf7rLKQf/Full-Size-Render.jpg" alt="9">
     </div>
-    <div class="gallery">
-      <img src="https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg">
-      <img src="https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg">
-      <img src="https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg">
-      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg">
-    </div>
-  </section>
+    <button class="carousel-btn left">&#10094;</button>
+    <button class="carousel-btn right">&#10095;</button>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<style>
+.carousel-gallery {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+.gallery-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.4s ease;
+}
+.gallery-track img {
+  width: calc(100% / 3 - 10px);
+  max-width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.carousel-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 24px;
+}
+.carousel-btn.left {
+  left: 0;
+}
+.carousel-btn.right {
+  right: 0;
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+.lightbox-content {
+  display: block;
+  margin: 5% auto;
+  max-width: 90%;
+  max-height: 85vh;
+}
+.lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<script>
+  const track = document.querySelector('.gallery-track');
+  const leftBtn = document.querySelector('.carousel-btn.left');
+  const rightBtn = document.querySelector('.carousel-btn.right');
+  let index = 0;
+  const visible = 6;
+  const images = document.querySelectorAll('.gallery-track img');
+
+  function updateCarousel() {
+    const slideWidth = images[0].clientWidth + 10; // include gap
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  rightBtn.addEventListener('click', () => {
+    if (index < images.length - visible) index++;
+    updateCarousel();
+  });
+
+  leftBtn.addEventListener('click', () => {
+    if (index > 0) index--;
+    updateCarousel();
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox .close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.style.display = 'none';
+  });
+</script>
 
   <section id="testimonials">
     <div class="intro-text">
