@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Azure Horizon Charters | Fajardo, Puerto Rico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #f3faff; color: #003049; }
+    header {
+      background: url('https://i.postimg.cc/zGWpS8wz/IMG-0721.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    header h1, header p { z-index: 2; position: relative; }
+    header h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    header p { font-size: 1.2rem; max-width: 600px; }
+    nav {
+      background: #0077b6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+    }
+    .lang-toggle {
+      background: white;
+      color: #0077b6;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section { max-width: 1100px; margin: auto; padding: 4rem 2rem; }
+    .intro-text { text-align: center; margin-bottom: 3rem; }
+    .intro-text h2 { color: #0077b6; font-size: 2rem; margin-bottom: 1rem; }
+    .intro-text p { font-size: 1.1rem; color: #333; }
+    .pricing, .features, .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 { color: #00a8e8; margin-bottom: 0.5rem; }
+    .card p { color: #333; }
+    .gallery-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      white-space: nowrap;
+    }
+    .gallery-inner {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+    .gallery-inner img {
+      height: 200px;
+      width: auto;
+      object-fit: cover;
+      scroll-snap-align: start;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      gap: 1rem;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    .lightbox-arrow {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+      z-index: 10000;
+      user-select: none;
+    }
+    .lightbox-arrow.prev { position: absolute; left: 30px; }
+    .lightbox-arrow.next { position: absolute; right: 30px; }
+    .cta {
+      background: #00b4d8;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .cta a {
+      background: white;
+      color: #00b4d8;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+    footer {
+      background: #003049;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    footer img { height: 40px; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Azure Horizon Charters</h1>
+    <p>Excursiones privadas en bote a Icacos, Palomino, Vieques y Culebra desde Fajardo, Puerto Rico.</p>
+  </header>
+  <nav>
+    <div>
+      <a href="#services">Tours</a>
+      <a href="#pricing">Precios</a>
+      <a href="#gallery">Galería</a>
+      <a href="#testimonials">Testimonios</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <button class="lang-toggle" onclick="window.location.href='index.html'">English</button>
+  </nav>
+
+  <section id="services">
+    <div class="intro-text">
+      <h2>¿Qué incluye?</h2>
+      <p>Playas paradisíacas, equipo de snorkel, bocina bluetooth, nevera, paradas flexibles y servicio personalizado. ¡Solo trae tu toalla y bloqueador!</p>
+    </div>
+    <div class="features">
+      <div class="card">
+        <h3>Snorkel</h3>
+        <p>Explora aguas cristalinas y vida marina colorida.</p>
+      </div>
+      <div class="card">
+        <h3>Bebidas frías</h3>
+        <p>Incluye agua, refrescos y cerveza local (en algunos paquetes).</p>
+      </div>
+      <div class="card">
+        <h3>Guía privado</h3>
+        <p>Capitán con experiencia y atención 100% personalizada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="intro-text">
+      <h2>Paquetes y tarifas</h2>
+    </div>
+    <div class="pricing">
+      <div class="card"><h3>4 horas</h3><p>$550 – Tour local a Icacos o Palomino. Sin comida ni bebidas.</p></div>
+      <div class="card"><h3>6 horas</h3><p>$750 – Incluye picadera, bebidas, comida criolla y cerveza.</p></div>
+      <div class="card"><h3>8 horas</h3><p>$950 – Icacos, Palomino e Isleta Marina. Todo incluido.</p></div>
+      <div class="card"><h3>7 horas</h3><p>$1350 – Culebra o Vieques. Experiencia completa. Todo incluido.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="intro-text">
+      <h2>Galería</h2>
+      <p>Momentos reales con nuestros invitados.</p>
+    </div>
+    <div class="gallery-scroll">
+      <div class="gallery-inner" id="gallery-inner"></div>
+    </div>
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-arrow prev" onclick="navigateLightbox(-1)">&#10094;</button>
+      <img id="lightbox-img" src="" />
+      <button class="lightbox-arrow next" onclick="navigateLightbox(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="intro-text">
+      <h2>Testimonios</h2>
+      <p>Lo que dicen nuestros invitados:</p>
+    </div>
+    <div class="testimonials">
+      <div class="card"><p>"Increíble experiencia. Vimos tortugas y playas escondidas. 100% recomendado."</p><strong>– Laura G.</strong></div>
+      <div class="card"><p>"El capitán fue súper amable, el bote estaba impecable, y el atardecer... wow."</p><strong>– Andrew M.</strong></div>
+      <div class="card"><p>"Lo mejor de nuestro viaje a Puerto Rico. Lo volveríamos a reservar sin dudar."</p><strong>– Mark & Julia</strong></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>¿Listo para navegar?</h2>
+    <p>Reserva tu aventura caribeña inolvidable ahora.</p>
+    <a href="https://wa.me/17874734037?text=Hola%2C%20quiero%20reservar%20una%20excursi%C3%B3n%20privada%20con%20Azure%20Horizon">Reservar por WhatsApp</a>
+  </section>
+
+  <section id="contact">
+    <div class="intro-text">
+      <h2>Contáctanos</h2>
+      <p>📞 <strong>Teléfono:</strong> <a href="tel:+17874734037">787-473-4037</a><br>
+         📧 <strong>Email:</strong> <a href="mailto:j.gm13@hotmail.com">j.gm13@hotmail.com</a><br>
+         📍 Salida desde Fajardo, Puerto Rico<br>
+         📸 <a href="https://www.instagram.com/azure_horizon_charters" target="_blank">Síguenos en Instagram</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <img src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg" alt="Azure Horizon Logo">
+    <p>&copy; 2025 Azure Horizon Charters. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const allImages = [
+      "https://i.postimg.cc/zGWpS8wz/IMG-0721.jpg",
+      "https://i.postimg.cc/7Y4kr703/Full-Size-Render.jpg",
+      "https://i.postimg.cc/T3HF1WLH/Full-Size-Render.jpg",
+      "https://i.postimg.cc/D0dRwjLq/Full-Size-Render.jpg",
+      "https://i.postimg.cc/mgXf95qj/Full-Size-Render.jpg",
+      "https://i.postimg.cc/5NgZcrxJ/Full-Size-Render.jpg",
+      "https://i.postimg.cc/BQCGS6Bd/Full-Size-Render.jpg",
+      "https://i.postimg.cc/WpMB83Ch/Full-Size-Render.jpg",
+      "https://i.postimg.cc/sf7rLKQf/Full-Size-Render.jpg",
+      "https://i.postimg.cc/Jz4CGLTt/Full-Size-Render.jpg",
+      "https://i.postimg.cc/bNpKBPfL/Full-Size-Render.jpg",
+      "https://i.postimg.cc/25yYXDvg/IMG-0540.jpg",
+      "https://i.postimg.cc/C1ZFdgxb/IMG-0718.jpg",
+      "https://i.postimg.cc/Hs0Tr3dv/IMG-1225.jpg",
+      "https://i.postimg.cc/tRxqjpfj/IMG-1671.jpg",
+      "https://i.postimg.cc/Jz1MZJhr/IMG-1837.jpg",
+      "https://i.postimg.cc/GtGdJxY2/IMG-2104.jpg",
+      "https://i.postimg.cc/Gpm3wY07/IMG-2106.jpg",
+      "https://i.postimg.cc/1tNQsrvH/Penultimate-Full-Size-Render.jpg",
+      "https://i.postimg.cc/YSR4QM7V/Full-Size-Render.jpg",
+      "https://i.postimg.cc/TYTrSd2k/172f4fc8-4092-4dd4-a6c0-0bc766bf87e2.jpg",
+      "https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg",
+      "https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    const galleryContainer = document.getElementById("gallery-inner");
+    allImages.forEach((src, i) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.onclick = () => openLightbox(i);
+      galleryContainer.appendChild(img);
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = allImages[index];
+      lightbox.style.display = "flex";
+    }
+
+    function navigateLightbox(step) {
+      currentIndex = (currentIndex + step + allImages.length) % allImages.length;
+      document.getElementById("lightbox-img").src = allImages[currentIndex];
+    }
+
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+      if (!e.target.closest("button")) {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
