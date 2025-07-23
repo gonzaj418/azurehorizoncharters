@@ -158,7 +158,6 @@
     </div>
   </section>
 
-<!-- GALERÍA COMPLETA CON SCROLL Y ZOOM SWIPE-->
 <section id="gallery">
   <div class="intro-text">
     <h2>Gallery</h2>
@@ -195,7 +194,9 @@
   </div>
 
   <div class="lightbox" id="lightbox">
+    <button class="lightbox-arrow prev" onclick="navigateLightbox(-1)">&#10094;</button>
     <img id="lightbox-img" src="" />
+    <button class="lightbox-arrow next" onclick="navigateLightbox(1)">&#10095;</button>
   </div>
 </section>
 
@@ -229,12 +230,30 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  gap: 1rem;
 }
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
   object-fit: contain;
+}
+.lightbox-arrow {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+.lightbox-arrow.prev {
+  position: absolute;
+  left: 30px;
+}
+.lightbox-arrow.next {
+  position: absolute;
+  right: 30px;
 }
 </style>
 
@@ -264,7 +283,6 @@ const allImages = [
   "https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg",
   "https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg"
 ];
-
 let currentIndex = 0;
 function openLightbox(index) {
   currentIndex = index;
@@ -273,52 +291,16 @@ function openLightbox(index) {
   lightboxImg.src = allImages[index];
   lightbox.style.display = "flex";
 }
-
-document.getElementById("lightbox").addEventListener("click", e => {
-  if (e.target.id === "lightbox") {
+function navigateLightbox(step) {
+  currentIndex = (currentIndex + step + allImages.length) % allImages.length;
+  document.getElementById("lightbox-img").src = allImages[currentIndex];
+}
+document.getElementById("lightbox").addEventListener("click", (e) => {
+  if (!e.target.closest("button")) {
     document.getElementById("lightbox").style.display = "none";
   }
 });
-
-let startX = 0, startY = 0, endX = 0, endY = 0;
-const lightboxEl = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-lightboxEl.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-  startY = e.touches[0].clientY;
-}, false);
-
-lightboxEl.addEventListener("touchmove", e => {
-  endX = e.touches[0].clientX;
-  endY = e.touches[0].clientY;
-  if (Math.abs(startX - endX) > Math.abs(startY - endY)) {
-    e.preventDefault();
-  }
-}, { passive: false });
-
-lightboxEl.addEventListener("touchend", () => {
-  const dx = endX - startX;
-  if (Math.abs(dx) > 50) {
-    if (dx < 0) navigate(1);
-    else navigate(-1);
-  }
-}, false);
-
-function navigate(dir) {
-  currentIndex = (currentIndex + dir + allImages.length) % allImages.length;
-  document.getElementById("lightbox-img").src = allImages[currentIndex];
-}
-
-document.addEventListener("keydown", e => {
-  if (lightboxEl.style.display === "flex") {
-    if (e.key === "ArrowLeft") navigate(-1);
-    else if (e.key === "ArrowRight") navigate(1);
-    else if (e.key === "Escape") lightboxEl.style.display = "none";
-  }
-});
 </script>
-
 
   <section id="testimonials">
     <div class="intro-text">
