@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
   <style>
-     * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Montserrat', sans-serif; background-color: #f3faff; color: #003049; }
     header {
       background: url('https://i.postimg.cc/zGWpS8wz/IMG-0721.jpg') center/cover no-repeat;
@@ -127,7 +127,7 @@
 
   <section id="services">
     <div class="intro-text">
-      <h2>¿Qué incluye?</h2>
+     <h2>¿Qué incluye?</h2>
       <p>Playas paradisíacas, equipo de snorkel, bocina bluetooth, nevera, paradas flexibles y servicio personalizado. ¡Solo trae tu toalla y bloqueador!</p>
     </div>
     <div class="features">
@@ -158,13 +158,14 @@
     </div>
   </section>
 
-  <section id="gallery">
-    <div class="intro-text">
-      <h2>Galería</h2>
-      <p>Momentos reales con nuestros invitados.</p>
-    </div>
-    
- <div class="gallery-scroll">
+<!-- GALERÍA MEJORADA COMPLETA -->
+<section id="gallery">
+  <div class="intro-text">
+    <h2>Galería</h2>
+    <p>Momentos reales con nuestros invitados.</p>
+  </div>
+
+  <div class="gallery-scroll">
     <div class="gallery-inner">
       <!-- Las 23 imágenes -->
       <img src="https://i.postimg.cc/zGWpS8wz/IMG-0721.jpg" onclick="openLightbox(0)" />
@@ -255,7 +256,7 @@
   position: absolute;
   right: 30px;
 }
- @media (max-width: 768px) {
+  @media (max-width: 768px) {
   .lightbox-arrow {
     display: none;
   }
@@ -305,7 +306,7 @@ document.getElementById("lightbox").addEventListener("click", (e) => {
     document.getElementById("lightbox").style.display = "none";
   }
 });
-  <script>
+
 let startX = 0;
 let endX = 0;
 
@@ -337,7 +338,7 @@ function handleSwipe() {
 
   <section id="testimonials">
     <div class="intro-text">
-      <h2>Testimonios</h2>
+     <h2>Testimonios</h2>
       <p>Lo que dicen nuestros invitados:</p>
     </div>
     <div class="testimonials">
@@ -348,6 +349,7 @@ function handleSwipe() {
   </section>
 
   <section class="cta">
+    <h2>Ready to set sail?</h2>
     <h2>¿Listo para navegar?</h2>
     <p>Reserva tu aventura caribeña inolvidable ahora.</p>
     <a href="https://wa.me/17874734037?text=Hola%2C%20quiero%20reservar%20una%20excursi%C3%B3n%20privada%20con%20Azure%20Horizon">Reservar por WhatsApp</a>
@@ -355,7 +357,7 @@ function handleSwipe() {
 
   <section id="contact">
     <div class="intro-text">
-      <h2>Contáctanos</h2>
+    <h2>Contáctanos</h2>
       <p>📞 <strong>Teléfono:</strong> <a href="tel:+17874734037">787-473-4037</a><br>
          📧 <strong>Email:</strong> <a href="mailto:j.gm13@hotmail.com">j.gm13@hotmail.com</a><br>
          📍 Salida desde Fajardo, Puerto Rico<br>
@@ -380,4 +382,3 @@ function handleSwipe() {
 
 </body>
 </html>
- 
