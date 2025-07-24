@@ -306,6 +306,34 @@ document.getElementById("lightbox").addEventListener("click", (e) => {
     document.getElementById("lightbox").style.display = "none";
   }
 });
+
+let startX = 0;
+let endX = 0;
+
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxContainer = document.getElementById("lightbox");
+
+lightboxContainer.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+lightboxContainer.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diffX = endX - startX;
+  if (Math.abs(diffX) > 50) {
+    if (diffX < 0) {
+      navigateLightbox(1); // Swipe izquierda → siguiente
+    } else {
+      navigateLightbox(-1); // Swipe derecha → anterior
+    }
+  }
+}
+</script>
+
 </script>
 
   <section id="testimonials">
