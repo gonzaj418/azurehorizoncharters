@@ -26,7 +26,8 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      header::after {background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0));
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
     }
     header h1, header p { z-index: 2; position: relative; }
     header h1 { font-size: 2.8rem; margin-bottom: 1rem; }
@@ -112,32 +113,32 @@
   <header>
     <h1>Azure Horizon Charters</h1>
     <p>Private boat charters to Icacos, Palomino, Vieques & Culebra from Fajardo, Puerto Rico.</p>
+    <div style="text-align: center; margin-top: 40px;">
     <a href="https://tidycal.com/azurehorizoncharters" class="book-now-btn" target="_blank">Book Now</a>
 </div>
 
 <style>
-<div style="text-align: center; margin-top: 40px;">
-  
 .book-now-btn {
-  background: white;
-  color: #003049;
-  font-size: 20px;
+  background-color: #00e0c6; /* verde tuquesa */
+  color: white;
+  font-size: 22px;
   padding: 14px 36px;
-  border-radius: 30px;
-  font-weight: 700;
+  border-radius: 40px;
+  font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  box-shadow: 0 6px 18px rgba(0, 224, 198, 0.5);
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 .book-now-btn:hover {
-  background: #003049;
-  color: white;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background-color: #00c5af;
+  box-shadow: 0 10px 25px rgba(0, 197, 175, 0.7);
+  transform: scale(1.05);
 }
-
 </style>
+
 
   </header>
   <nav>
