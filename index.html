@@ -197,7 +197,7 @@
   </section>
 
   
-  <section id="our-boat" class="section">
+ <section id="our-boat" class="section">
   <div class="intro-text">
     <h2>Our Boat</h2>
     <p>
@@ -206,7 +206,7 @@
     <p>
       Powered by twin outboard engines, it's the perfect ride to explore Icacos, Palomino, Vieques, or Culebra—fast, stable, and stylish.
     </p>
-    <img src="https://i.postimg.cc/zBzNNzr8/665-BE8-FE-CB13-4170-A2-D5-12447-AD043-CF.jpg" alt="Our boat docked and ready for charter">
+    <img src="https://i.postimg.cc/zBzNNzr8/665-BE8-FE-CB13-4170-A2-D5-12447-AD043-CF.jpg" alt="Our boat docked and ready for charter" class="boat-thumbnail">
   </div>
 </section>
 
@@ -230,14 +230,23 @@
   color: #333;
 }
 
-#our-boat img {
-  max-width: 100%;
-  height: auto;
+#our-boat .boat-thumbnail {
+  height: 200px;
+  width: auto;
   border-radius: 10px;
   margin-top: 2rem;
+  object-fit: cover;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#our-boat .boat-thumbnail:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
 }
 </style>
+
 
   
 <!-- GALERÍA MEJORADA COMPLETA -->
