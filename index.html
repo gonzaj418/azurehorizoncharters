@@ -196,6 +196,53 @@
     </div>
   </section>
 
+<section id="our-fleet" class="section">
+  <div class="intro-text">
+    <h2>Our Fleet</h2>
+    <p>Choose the vessel that fits your adventure best.</p>
+  </div>
+
+  <div class="fleet-grid">
+    <!-- BOAT 1 -->
+    <div class="card">
+      <img src="https://i.postimg.cc/zBzNNzr8/665-BE8-FE-CB13-4170-A2-D5-12447-AD043-CF.jpg" alt="Primary boat" />
+      <h3>Main Boat – 27 ft Walkaround</h3>
+      <p>Cruise comfortably and safely aboard our 27-foot walkaround vessel. It features a closed cabin, premium sound system, T-Top shade, and ample space to relax with family or friends..</p>
+    </div>
+
+    <!-- BOAT 2 -->
+    <div class="card">
+      <img src="https://i.postimg.cc/85ZSP2pW/Full-Size-Render.jpg" alt="Second boat" />
+      <h3>28 ft Center Console</h3>
+      <p>Open layout with shade, cooler and sound system.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.fleet-grid .card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.fleet-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+</style>
+
+
   
  <section id="our-boat" class="section">
   <div class="intro-text">
@@ -207,42 +254,6 @@
   </div>
 </section>
 
-<style>
-#our-boat {
-  padding: 4rem 2rem;
-  background-color: #f3faff;
-  text-align: center;
-}
-
-#our-boat h2 {
-  font-size: 2rem;
-  color: #0077b6;
-  margin-bottom: 1rem;
-}
-
-#our-boat p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0.5rem auto;
-  color: #333;
-}
-
-#our-boat .boat-thumbnail {
-  height: 200px;
-  width: auto;
-  border-radius: 10px;
-  margin-top: 2rem;
-  object-fit: cover;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-#our-boat .boat-thumbnail:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
-}
-</style>
 
 
   
