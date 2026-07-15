@@ -106,8 +106,52 @@
       text-align: center;
       padding: 2rem;
     }
-    footer img { height: 40px; margin-bottom: 0.5rem; }
+   .azure-footer-logo {
+  display: block;
+  width: auto;
+  height: 40px;
+  margin: 0 auto 12px;
+}
 
+.kayak-mention {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.kayak-badge-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.kayak-badge {
+  display: block;
+  width: 190px;
+  max-width: 80vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.kayak-mention p {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.kayak-mention p a {
+  color: #90e0ef;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
     /* Estilo especial para precios con oferta */
 .card p del {
   color: #cc0000;        /* rojo para el precio anterior */
@@ -287,7 +331,7 @@
       <img src="https://i.postimg.cc/YSR4QM7V/Full-Size-Render.jpg" onclick="openLightbox(20)" />
       <img src="https://i.postimg.cc/TYTrSd2k/172f4fc8-4092-4dd4-a6c0-0bc766bf87e2.jpg" onclick="openLightbox(21)" />
       <img src="https://i.postimg.cc/CxQkzbGt/Penultimate-Full-Size-Render.jpg" onclick="openLightbox(22)" />
-      <img src="httpsw://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" onclick="openLightbox(23)" />
+      <img src="https://i.postimg.cc/FzHHyBmx/Full-Size-Render.jpg" onclick="openLightbox(23)" />
       <img src="https://i.postimg.cc/xCT6SFZW/Full-Size-Render.jpg" onclick="openLightbox(24)" />
     </div>
   </div>
@@ -432,7 +476,6 @@ function handleSwipe() {
     }
   }
 }
-</script>
 
 </script>
 
@@ -496,7 +539,7 @@ function handleSwipe() {
     </div>
   </section>
 
-  <footer>
+ <footer>
   <img
     src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg"
     alt="Azure Horizon Charters Logo"
@@ -504,8 +547,18 @@ function handleSwipe() {
   >
 
   <div class="kayak-mention">
-
-   <a href='https://www.kayak.es' target='_blank'><img height='40' src='https://content.r9cdn.net/rimg/seo/badges/v1/ORANGE_LARGE_LOGO_KAYAK.png' /></a>		
+    <a
+      href="https://www.kayak.es/Municipio-de-Fajardo.24347.guide"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="kayak-badge-link"
+    >
+      <img
+        src="https://content.r9cdn.net/rimg/seo/badges/v1/ORANGE_LARGE_LOGO_KAYAK.png"
+        alt="KAYAK"
+        class="kayak-badge"
+      >
+    </a>
 
     <p>
       Discover more things to do in
