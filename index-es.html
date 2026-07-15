@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -106,7 +106,7 @@
       text-align: center;
       padding: 2rem;
     }
-    footer img { height: 40px; margin-bottom: 0.5rem; }
+
     
     .kayak-mention {
 
@@ -122,40 +122,56 @@
 
 }
 
+.azure-footer-logo {
+  display: block;
+  width: auto;
+  height: 75px;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
+
+.kayak-mention {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.kayak-badge-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.kayak-badge {
+  display: block;
+  width: 170px;
+  max-width: 80vw;
+  height: auto;
+  margin: 0 auto;
+}
+
 .kayak-mention p {
-
   color: white;
-
   font-size: 0.95rem;
-
   line-height: 1.6;
-
 }
 
-.kayak-mention a {
-
+.kayak-mention p a {
   color: #90e0ef;
-
   font-weight: 700;
-
   text-decoration: underline;
-
 }
 
-.kayak-mention a:hover {
-
+.kayak-mention p a:hover {
   color: white;
-
 }
 
 .footer-copyright {
-
   font-size: 0.85rem;
-
   line-height: 1.5;
-
   opacity: 0.85;
-
 }
     
      .book-now-container {
@@ -248,7 +264,10 @@
 <section id="pricing">
   <div class="intro-text">
     <h2>Paquetes y tarifas</h2>
-    <p><em> Ofertas de Verano ☀️(2026): Precios reducidos en $100 (ya aplicados abajo, propina no incluida)</em></p>
+   <p>
+  <em>☀️ Oferta de verano 2026: precios reducidos en $100
+  (descuento ya aplicado; propina no incluida).</em>
+</p>
     <p style="font-size: 0.95rem; color: #007b9e; margin-top: 5px;">
       💡 Los precios mostrados aplican para grupos de hasta <strong>6 personas</strong>. 
     </p>
@@ -262,7 +281,7 @@
 
     <div class="card">
       <h3>6 horas</h3>
-      <p><del>$750</del> <strong>$850</strong> – Excursión local a Icacos o Palomino, snacks de frutas frescas, refrescos, comida criolla y cervezas locales.</p>
+      <p><del>$950</del> <strong>$850</strong> – Excursión local a Icacos o Palomino, snacks de frutas frescas, refrescos, comida criolla y cervezas locales.</p>
     </div>
 
     <div class="card">
@@ -272,7 +291,7 @@
 
     <div class="card">
       <h3>7 horas</h3>
-      <p><del>$1400</del> <strong>$1500</strong> – Cayos de Culebra: (Culebritas o Peña / Experiencia premium hacia Playa Tortuga o Playa Luis Peña) o Vieques. Todo incluido.</p>
+      <p><del>$1600</del> <strong>$1500</strong> – Cayos de Culebra: (Culebritas o Peña / Experiencia premium hacia Playa Tortuga o Playa Luis Peña) o Vieques. Todo incluido.</p>
     </div>
   </div>
 </section>
@@ -480,7 +499,6 @@ function handleSwipe() {
     }
   }
 }
-</script>
 
 </script>
 
@@ -544,47 +562,42 @@ function handleSwipe() {
   </section>
 
 <footer>
-
   <img
-
     src="https://i.postimg.cc/WbMhG1Yb/Full-Size-Render.jpg"
-
-    alt="Azure Horizon Charters Logo"
-
+    alt="Logo de Azure Horizon Charters"
+    class="azure-footer-logo"
   >
 
   <div class="kayak-mention">
+    <a
+      href="https://www.kayak.es/Municipio-de-Fajardo.24347.guide"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="kayak-badge-link"
+    >
+      <img
+        src="https://content.r9cdn.net/rimg/seo/badges/v1/ORANGE_LARGE_LOGO_KAYAK.png"
+        alt="KAYAK"
+        class="kayak-badge"
+      >
+    </a>
 
     <p>
-
-      Descubre más cosas que hacer en
-
+      Azure Horizon Charters aparece en la
       <a
-
         href="https://www.kayak.es/Municipio-de-Fajardo.24347.guide"
-
         target="_blank"
-
         rel="noopener noreferrer"
-
       >
-
-        Fajardo con KAYAK
-
+        Guía de Viajes de KAYAK para Fajardo
       </a>.
-
     </p>
-
   </div>
 
   <p class="footer-copyright">
-
     &copy; 2026 Azure Horizon Charters. Todos los derechos reservados.
-
     Nos reservamos el derecho de admisión.
-
   </p>
-
 </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
